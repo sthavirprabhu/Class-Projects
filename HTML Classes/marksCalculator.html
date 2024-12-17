@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <caption><h1>Marks Calculator</h1></caption>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>English</th>
+                <th>Total Marks</th>
+                <th>Average Marks</th>
+            </tr>
+        </thead>
+        <tbody id="MarksTable">
+            <tr>
+                <td><input type="text" placeholder="Enter Name"/></td>
+                <td><input type="number" placeholder="Enter Marks" class="subjects"/></td>
+                <td><input type="number" placeholder="Enter Marks" class="subjects"/></td>
+                <td><input type="number" placeholder="Enter Marks" class="subjects"/></td>
+                <td class="total"></td>
+                <td class="average"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button onClick="addRow()">Add Row</button>
+    <script>
+        addRow=()=>{
+            const newRow = `
+            <tr>
+                <td><input type="text" placeholder="Enter Name"/></td>
+                <td><input type="number" placeholder="Enter Marks" class="subjects"/></td>
+                <td><input type="number" placeholder="Enter Marks" class="subjects"/></td>
+                <td><input type="number" placeholder="Enter Marks" class="subjects"/></td>
+                <td class="total"></td>
+                <td class="average"></td>
+            </tr>
+            `
+            document.getElementById('MarksTable').insertAdjacentHTML('beforeend', newRow)
+        }
+    </script>
+</body>
+</html>
